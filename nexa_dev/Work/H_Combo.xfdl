@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="H_Combo" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Static id="sta01" taborder="0" text="&gt;기본 콤보박스" left="19" top="29" width="229" height="52"/>
+        <Combo id="com01" taborder="1" left="17" top="104" width="183" height="39" displaynulltext="--선택하세요--" innerdataset="ds_fruit" codecolumn="No" datacolumn="NAME" onitemchanged="com01_onitemchanged"/>
+        <Edit id="edit01" taborder="2" left="257" top="99" width="133" height="49"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_fruit">
+        <ColumnInfo>
+          <Column id="No" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="No">01</Col>
+            <Col id="NAME">망고</Col>
+          </Row>
+          <Row>
+            <Col id="No">02</Col>
+            <Col id="NAME">수박</Col>
+          </Row>
+          <Row>
+            <Col id="No">03</Col>
+            <Col id="NAME">바나나</Col>
+          </Row>
+          <Row>
+            <Col id="No">04</Col>
+            <Col id="NAME">파인애플</Col>
+          </Row>
+          <Row>
+            <Col id="No">05</Col>
+            <Col id="NAME">복숭아</Col>
+          </Row>
+          <Row>
+            <Col id="No">06</Col>
+            <Col id="NAME">딸기</Col>
+          </Row>
+          <Row>
+            <Col id="No">07</Col>
+            <Col id="NAME">오렌지</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.com01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	this.edit01.set_value(this.com01.value);
+	alert("code: "+ obj.value + ",name :" + obj.text);
+
+};
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="M_Emp" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Static id="sta_01" taborder="0" text="&gt;사원관리" left="15" top="21" width="162" height="43" onclick="Static00_onclick" font="16px/normal &quot;Gulim&quot;"/>
+        <Div id="div_search" taborder="1" left="53" top="99" width="917" height="81" background="antiquewhite">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="*Name" left="14" top="21" width="43" height="43" onclick="div_search_Static00_onclick"/>
+              <Edit id="Edit00" taborder="1" left="70" top="21" width="154" height="43" onchanged="div_search_Edit00_onchanged"/>
+              <Static id="dpt_01" taborder="2" text="*Dept" left="240" top="23" width="82" height="43" onclick="div_search_Static00_onclick"/>
+              <Combo id="cbo_01" taborder="3" text="Combo00" left="292" top="26" width="145" height="39" innerdataset="ds_dept" datacolumn="DEPT_NAME" codecolumn="DEPT_CD"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" taborder="2" left="53" top="190" width="1142" height="241" binddataset="ds_emp" cellsizingtype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="80"/>
+                <Column size="100"/>
+                <Column size="148"/>
+                <Column size="160"/>
+                <Column size="160"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="100"/>
+                <Column size="150"/>
+                <Column size="150"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NO."/>
+                <Cell col="1" text="ID"/>
+                <Cell col="2" text="Name"/>
+                <Cell col="3" text="Res_Num."/>
+                <Cell col="4" text="Email"/>
+                <Cell col="5" text="Phone" displaytype="normal" edittype="normal" maskedittype="string"/>
+                <Cell col="6" text="Dept." combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NAME"/>
+                <Cell col="7" text="Salary"/>
+                <Cell col="8" text="Bonus"/>
+                <Cell col="9" text="Manager"/>
+                <Cell col="10" text="Hire Date"/>
+                <Cell col="11" text="Ent Date"/>
+                <Cell col="12" displaytype="checkboxcontrol"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1"/>
+                <Cell col="1" text="bind:EMP_ID" textAlign="center"/>
+                <Cell col="2" text="bind:EMP_NAME"/>
+                <Cell col="3" text="bind:EMP_NO" displaytype="mask" edittype="mask" maskeditformat="######-#######" maskedittype="string"/>
+                <Cell col="4" text="bind:EMAIL" tooltiptext="bind:EMAIL"/>
+                <Cell col="5" text="bind:PHONE" displaytype="mask" edittype="mask" maskeditformat="###-####-####" maskedittype="string" combodataset="ds_emp" combodatacol="PHONE"/>
+                <Cell col="6" text="bind:DEPT_CODE" displaytype="combotext" edittype="combo" combodataset="ds_dept" combodatacol="DEPT_NAME" combocodecol="DEPT_CD"/>
+                <Cell col="7" text="bind:SALARY" displaytype="number" edittype="normal"/>
+                <Cell col="8" text="bind:BONUS" displaytype="number"/>
+                <Cell col="9" text="bind:MANAGER_ID" displaytype="combotext" combodataset="ds_emp" combocodecol="EMP_ID" combodatacol="EMP_NAME"/>
+                <Cell col="10" text="bind:HIRE_DATE" displaytype="calendarcontrol"/>
+                <Cell col="11" text="bind:ENT_DATE" displaytype="calendarcontrol" edittype="date"/>
+                <Cell col="12" text="bind:ENT_YN" displaytype="checkboxcontrol" edittype="checkbox" checkboxtruevalue="Y" checkboxfalsevalue="F"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_delrow" taborder="3" text="Del Row" left="600" top="53" width="78" height="35"/>
+        <Button id="btn_addrow" taborder="4" text="Add Row" left="695" top="53" width="76" height="35"/>
+        <Button id="btn_search" taborder="5" text="Search" left="791" top="53" width="78" height="35"/>
+        <Button id="btn_save" taborder="6" text="Save" left="886" top="53" width="76" height="35"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+    <Objects>
+      <Dataset id="ds_emp">
+        <ColumnInfo>
+          <Column id="EMP_ID" type="STRING" size="256"/>
+          <Column id="EMP_NAME" type="STRING" size="256"/>
+          <Column id="EMP_NO" type="STRING" size="256"/>
+          <Column id="EMAIL" type="STRING" size="256"/>
+          <Column id="PHONE" type="STRING" size="256"/>
+          <Column id="DEPT_CODE" type="STRING" size="256"/>
+          <Column id="JOB_CODE" type="STRING" size="256"/>
+          <Column id="SAL_LEVEL" type="STRING" size="256"/>
+          <Column id="SALARY" type="BIGDECIMAL" size="256"/>
+          <Column id="BONUS" type="BIGDECIMAL" size="256"/>
+          <Column id="MANAGER_ID" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="DATE" size="256"/>
+          <Column id="ENT_DATE" type="DATE" size="256"/>
+          <Column id="ENT_YN" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMP_ID">200</Col>
+            <Col id="EMP_NAME">선동일</Col>
+            <Col id="EMP_NO">891212-462408       </Col>
+            <Col id="EMAIL">sun_di@kh.or.kr</Col>
+            <Col id="PHONE">01099546325</Col>
+            <Col id="DEPT_CODE">D9</Col>
+            <Col id="JOB_CODE">J1</Col>
+            <Col id="SAL_LEVEL">S1</Col>
+            <Col id="SALARY">8000000</Col>
+            <Col id="BONUS">0.3</Col>
+            <Col id="HIRE_DATE">90/02/06</Col>
+            <Col id="ENT_YN">N</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_ID">201</Col>
+            <Col id="EMP_NAME">송종기</Col>
+            <Col id="EMP_NO">631106-1548654</Col>
+            <Col id="EMAIL">song_jk@kh.or.kr</Col>
+            <Col id="PHONE">01045686656</Col>
+            <Col id="DEPT_CODE">D9</Col>
+            <Col id="JOB_CODE">J2</Col>
+            <Col id="SAL_LEVEL">S1</Col>
+            <Col id="SALARY">6000000</Col>
+            <Col id="MANAGER_ID">200</Col>
+            <Col id="HIRE_DATE">01/09/01</Col>
+            <Col id="ENT_YN">N</Col>
+            <Col id="BONUS">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_ID">202</Col>
+            <Col id="EMP_NAME">노옹철</Col>
+            <Col id="EMP_NO">861015-1356452</Col>
+            <Col id="EMAIL">no_hc@kh.or.kr</Col>
+            <Col id="PHONE">01066656263</Col>
+            <Col id="DEPT_CODE">D9</Col>
+            <Col id="JOB_CODE">J2</Col>
+            <Col id="SAL_LEVEL">S4</Col>
+            <Col id="SALARY">3700000</Col>
+            <Col id="MANAGER_ID">201</Col>
+            <Col id="HIRE_DATE">01/01/01</Col>
+            <Col id="ENT_YN">N</Col>
+            <Col id="BONUS">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_ID">203</Col>
+            <Col id="EMP_NAME">송은희</Col>
+            <Col id="EMP_NO">631010-2653546</Col>
+            <Col id="EMAIL">song_eh@kh.or.kr</Col>
+            <Col id="PHONE">01077607879</Col>
+            <Col id="DEPT_CODE">D6</Col>
+            <Col id="JOB_CODE">J4</Col>
+            <Col id="SAL_LEVEL">S5</Col>
+            <Col id="SALARY">2800000</Col>
+            <Col id="MANAGER_ID">204</Col>
+            <Col id="HIRE_DATE">96/05/03</Col>
+            <Col id="ENT_YN">N</Col>
+            <Col id="BONUS">0</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_ID">204</Col>
+            <Col id="EMP_NAME">유재식</Col>
+            <Col id="EMP_NO">660508-1342154</Col>
+            <Col id="EMAIL">yoo_js@kh.or.kr</Col>
+            <Col id="PHONE">01099999129</Col>
+            <Col id="DEPT_CODE">D6</Col>
+            <Col id="JOB_CODE">J3</Col>
+            <Col id="SAL_LEVEL">S4</Col>
+            <Col id="SALARY">3400000</Col>
+            <Col id="BONUS">0.2</Col>
+            <Col id="MANAGER_ID">200</Col>
+            <Col id="HIRE_DATE">00/12/29</Col>
+            <Col id="ENT_YN">N</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="DEPT_CD" type="STRING" size="256"/>
+          <Column id="DEPT_NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DEPT_CD">D1</Col>
+            <Col id="DEPT_NAME">인사관리부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D2</Col>
+            <Col id="DEPT_NAME">회계관리부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D3</Col>
+            <Col id="DEPT_NAME">마케팅부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D4</Col>
+            <Col id="DEPT_NAME">국내영업부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D5</Col>
+            <Col id="DEPT_NAME">해외영업1부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D6</Col>
+            <Col id="DEPT_NAME">해외영업2부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D7</Col>
+            <Col id="DEPT_NAME">해외영업3부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D8</Col>
+            <Col id="DEPT_NAME">기술지원부</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">D9</Col>
+            <Col id="DEPT_NAME">총무부</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

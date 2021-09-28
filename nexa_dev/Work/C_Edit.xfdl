@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="C_Edit" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Edit id="edit_01" taborder="0" left="30" top="65" width="140" height="40" displaynulltext="아무거나 입력하세요" onchanged="edit_01"/>
+        <Static id="sta_01" taborder="1" text="&gt; 일반 Edit" left="30" top="10" width="141" height="45"/>
+        <Edit id="edit_02" taborder="2" left="29" top="170" width="140" height="40" displaynulltext="읽기 전용입니다" readonly="true"/>
+        <Static id="sta_02" taborder="3" text="&gt; 읽기전용  Edit" left="29" top="115" width="141" height="45" onclick="sta_02_onclick"/>
+        <Edit id="edit_03" taborder="4" left="28" top="280" width="140" height="40" displaynulltext="비밀번호 edit 입니다." password="true"/>
+        <Static id="sta_03" taborder="5" text="&gt; 비밀번호 Edit" left="28" top="225" width="141" height="45"/>
+        <Edit id="edit_04" taborder="6" left="28" top="390" width="140" height="40" displaynulltext="영어만 입력합니다" inputtype="english" maxlength="4"/>
+        <Static id="sta_04" taborder="7" text="&gt; 영어만 허용 Edit / MaxLength" left="28" top="335" width="192" height="45"/>
+        <Edit id="edit_05" taborder="8" left="28" top="500" width="140" height="40" displaynulltext="숫자만 입력" inputtype="number"/>
+        <Static id="sta_05" taborder="9" text="&gt; 숫자만 허용 Edit" left="28" top="445" width="141" height="45"/>
+        <CheckBox id="chk_01" taborder="10" text="비밀번호 표시하기" left="164" top="237" width="152" height="20" onclick="chk_01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.edit_01_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+{
+	//edit는 onchanged로 
+	//button은 onclick
+	alert(e.prevalue);
+	this.edit_02.set_value(e.postvalue);
+};
+
+
+this.chk_01_onclick = function(obj:nexacro.CheckBox,e:nexacro.ClickEventInfo)
+{
+	alert(obj.value);
+	this.edit_03.set_password(!obj.value);
+};
+]]></Script>
+  </Form>
+</FDL>

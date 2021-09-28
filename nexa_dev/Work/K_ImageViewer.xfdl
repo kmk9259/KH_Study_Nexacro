@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="K_ImageViewer" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <ImageViewer id="ImageViewer00" taborder="0" left="24" top="10" width="293" height="184" image="url('imagerc::_images_/cat.jpg')"/>
+        <ImageViewer id="img02" taborder="1" left="25" top="216" width="291" height="159" onclick="ImageViewer01_onclick"/>
+        <Button id="btn_01" taborder="2" text="도넛" left="336" top="222" width="100" height="40" onclick="btn_01_onclick"/>
+        <Button id="btn_02" taborder="3" text="아이스크림" left="336" top="295" width="100" height="40" onclick="btn_02_onclick"/>
+        <Combo id="cbo_01" taborder="4" text="Combo00" left="358" top="86" width="296" height="40" onitemchanged="cbo_01_onitemchanged" innerdataset="ds_image" codecolumn="CODE" datacolumn="DATA"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+
+this.btn_01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.img02.set_image("url('imagerc::_images_/donut.png')");
+	this.img02.set_stretch('fit');
+};
+
+this.btn_02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.img02.set_image("url('imagerc::_images_/icecream.png')");
+	this.img02.set_stretch('fixaspectratio');
+};
+
+this.cbo_01_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	var imgUrl = this.cbo_01.value;
+	this.img02.set_image("url('"+imgUrl+"')");
+	this.img02.set_stretch('fixaspectratio');
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_image">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DATA">냥</Col>
+            <Col id="CODE">imagerc::_images_/cat.jpg</Col>
+          </Row>
+          <Row>
+            <Col id="DATA">멍</Col>
+            <Col id="CODE">imagerc::_images_/dog.jpg</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

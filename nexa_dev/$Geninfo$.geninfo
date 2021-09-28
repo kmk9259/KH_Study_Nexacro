@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+    </Rule>
+    <Info project="C:\KH정보교육원\NEXACRO\nexaPro\nexa_dev\" generated="C:\Users\kmk92\OneDrive\문서\nexacro\17.1\outputs\nexa_dev\"><File url="environment.xml" checksum="20210927174345" errormsg=""/><File url="typedefinition.xml" checksum="20210927174634" errormsg=""/><File url="appvariables.xml" checksum="20210927174345" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20210927174345" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200128141818" errormsg=""/><File url="Application_Desktop.xadl" checksum="20210927174345" errormsg=""/><File url="Work\A_Test.xfdl" checksum="20210927175843" errormsg=""/><File url="Work\B_Static.xfdl" checksum="20210927180848" errormsg=""/><File url="Work\C_Edit.xfdl" checksum="20210927191504" errormsg=""/><File url="Work\D_MaskEdit.xfdl" checksum="20210927193755" errormsg=""/><File url="Work\F_CheckBox.xfdl" checksum="20210927194835" errormsg=""/><File url="Work\G_Radio.xfdl" checksum="20210928154747" errormsg=""/><File url="Work\H_Combo.xfdl" checksum="20210928155401" errormsg=""/><File url="Work\I_Calender.xfdl" checksum="20210928155554" errormsg=""/><File url="Work\I_Calendar.xfdl" checksum="20210928161102" errormsg=""/><File url="Work\J_Container.xfdl" checksum="20210928165749" errormsg=""/><File url="Work\K_ImageViewer.xfdl" checksum="20210928171915" errormsg=""/><File url="Work\L_Grid.xfdl" checksum="20210928180146" errormsg=""/><File url="Work\M_Emp.xfdl" checksum="20210928181728" errormsg=""/></Info>
+  </GenInfo>
+</root>

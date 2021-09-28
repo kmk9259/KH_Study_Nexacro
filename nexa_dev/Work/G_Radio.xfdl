@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="G_Radio" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Static id="sta01" taborder="0" text="&gt;라디오 버튼 기본 형태" left="26" top="31" width="153" height="40" onclick="Static00_onclick"/>
+        <Radio id="rad_01" taborder="1" left="18" top="103" width="119" height="39" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" columncount="2" onitemchanged="rad_01_onitemchanged">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">M</Col>
+                <Col id="datacolumn">남성</Col>
+              </Row>
+              <Row>
+                <Col id="datacolumn">여성</Col>
+                <Col id="codecolumn">F</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Radio>
+        <Radio id="rad02" taborder="2" left="52" top="205" width="180" height="165" innerdataset="ds_fruit" codecolumn="No" datacolumn="NAME" columncount="0" rowcount="4"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.rad_01_onitemchanged = function(obj:nexacro.Radio,e:nexacro.ItemChangeEventInfo)
+{
+	alert("값 선택 : "+obj.value);
+	alert("값 선택 : "+this.rad_01.text);
+	
+	alert(e.posttext  + "  "+ e.postvalue + "  "+ e.pretext + "  "+ e.prevalue );
+
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_fruit">
+        <ColumnInfo>
+          <Column id="No" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="No">01</Col>
+            <Col id="NAME">망고</Col>
+          </Row>
+          <Row>
+            <Col id="No">02</Col>
+            <Col id="NAME">수박</Col>
+          </Row>
+          <Row>
+            <Col id="No">03</Col>
+            <Col id="NAME">바나나</Col>
+          </Row>
+          <Row>
+            <Col id="No">04</Col>
+            <Col id="NAME">파인애플</Col>
+          </Row>
+          <Row>
+            <Col id="No">05</Col>
+            <Col id="NAME">복숭아</Col>
+          </Row>
+          <Row>
+            <Col id="No">06</Col>
+            <Col id="NAME">딸기</Col>
+          </Row>
+          <Row>
+            <Col id="No">07</Col>
+            <Col id="NAME">오렌지</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

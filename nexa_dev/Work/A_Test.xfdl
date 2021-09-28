@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="A_Test" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Static id="sta_01" taborder="0" text="hello nexacro" left="70" top="70" width="120" height="60"/>
+        <Button id="btn_01" taborder="1" text="버튼입니다." left="230" top="70" width="120" height="50" onclick="btn_01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.alert("클릭했습니다");
+	trace("btn_01_onclick 클릭");
+	//trace -> output에 메시지로 출력
+};
+]]></Script>
+  </Form>
+</FDL>
