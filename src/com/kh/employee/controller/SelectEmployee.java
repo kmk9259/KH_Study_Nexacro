@@ -73,7 +73,7 @@ public class SelectEmployee extends HttpServlet implements Servlet {
 		//key:"name" , value :"ds.getString(0, "NAME")"
 		iMap.put("NAME", ds.getString(0, "NAME"));	//0번째 row에 colName
 		iMap.put("DEPT", ds.getString(0, "DEPT"));
-		
+		System.out.println(iMap);
 		
 		try {
 			List list = new EmployeeService().selectList(iMap);

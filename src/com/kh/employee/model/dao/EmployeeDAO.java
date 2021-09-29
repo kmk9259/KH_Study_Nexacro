@@ -21,6 +21,7 @@ public class EmployeeDAO {
 		ResultSet rset = null;
 		
 		String sql = "SELECT * FROM EMPLOYEE WHERE EMP_NAME LIKE '%'||Nvl(?,'')||'%' ";
+		System.out.println(iMap.get("DEPT"));
 		if(!iMap.get("DEPT").toString().equals("ALL")) {
 			//부서가 선택되었을 때
 			sql+= "AND DEPT_CODE LIKE '%'||Nvl(?,'')||'%' ORDER BY EMP_ID";

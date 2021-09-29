@@ -13,7 +13,7 @@
             this.set_titletext("New Form");
             if (Form == this.constructor)
             {
-                this._setFormPosition(1280,720);
+                this._setFormPosition(1480,720);
             }
             
             // Object(Dataset, ExcelExportObject) Initialize
@@ -32,32 +32,32 @@
             this.addChild(obj.name, obj);
             
             // UI Components Initialize
-            obj = new Static("sta_01","15","21","162","43",null,null,null,null,null,null,this);
+            obj = new Static("sta_01","10","54","162","43",null,null,null,null,null,null,this);
             obj.set_taborder("0");
             obj.set_text(">사원관리");
             obj.set_font("16px/normal \"Gulim\"");
             this.addChild(obj.name, obj);
 
-            obj = new Div("div_search","8","100","917","81",null,null,null,null,null,null,this);
+            obj = new Div("div_search","3","88","1422","42",null,null,null,null,null,null,this);
             obj.set_taborder("1");
             obj.set_background("antiquewhite");
             this.addChild(obj.name, obj);
 
-            obj = new Static("Static00","14","21","43","43",null,null,null,null,null,null,this.div_search.form);
+            obj = new Static("Static00","7","3","43","29",null,null,null,null,null,null,this.div_search.form);
             obj.set_taborder("0");
             obj.set_text("*Name");
             this.div_search.addChild(obj.name, obj);
 
-            obj = new Edit("Edit00","70","21","154","43",null,null,null,null,null,null,this.div_search.form);
+            obj = new Edit("Edit00","57","7","154","21",null,null,null,null,null,null,this.div_search.form);
             obj.set_taborder("1");
             this.div_search.addChild(obj.name, obj);
 
-            obj = new Static("dpt_01","240","23","82","43",null,null,null,null,null,null,this.div_search.form);
+            obj = new Static("dpt_01","231","3","55","23",null,null,null,null,null,null,this.div_search.form);
             obj.set_taborder("2");
             obj.set_text("*Dept");
             this.div_search.addChild(obj.name, obj);
 
-            obj = new Combo("cbo_dept","292","26","145","39",null,null,null,null,null,null,this.div_search.form);
+            obj = new Combo("cbo_dept","277","7","145","21",null,null,null,null,null,null,this.div_search.form);
             obj.set_taborder("3");
             obj.set_innerdataset("ds_dept");
             obj.set_datacolumn("DEPT_NAME");
@@ -65,34 +65,34 @@
             obj.set_text("Combo00");
             this.div_search.addChild(obj.name, obj);
 
-            obj = new Grid("Grid00","8","190","1142","241",null,null,null,null,null,null,this);
+            obj = new Grid("Grid00","3","130","1422","180",null,null,null,null,null,null,this);
             obj.set_taborder("2");
             obj.set_binddataset("ds_emp");
             obj.set_cellsizingtype("col");
             obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"48\"/><Column size=\"80\"/><Column size=\"100\"/><Column size=\"148\"/><Column size=\"160\"/><Column size=\"160\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/><Column size=\"100\"/><Column size=\"150\"/><Column size=\"150\"/><Column size=\"80\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/><Row size=\"24\" band=\"summ\"/></Rows><Band id=\"head\"><Cell text=\"NO.\"/><Cell col=\"1\" text=\"ID\"/><Cell col=\"2\" text=\"Name\"/><Cell col=\"3\" text=\"Res_Num.\"/><Cell col=\"4\" text=\"Email\"/><Cell col=\"5\" text=\"Phone\" displaytype=\"normal\" edittype=\"normal\" maskedittype=\"string\"/><Cell col=\"6\" text=\"Dept.\" combodataset=\"ds_dept\" combocodecol=\"DEPT_CD\" combodatacol=\"DEPT_NAME\"/><Cell col=\"7\" text=\"Salary\"/><Cell col=\"8\" text=\"Bonus\"/><Cell col=\"9\" text=\"Manager\"/><Cell col=\"10\" text=\"Hire Date\"/><Cell col=\"11\" text=\"Ent Date\"/><Cell col=\"12\" displaytype=\"checkboxcontrol\"/></Band><Band id=\"body\"><Cell text=\"expr:currow+1\" edittype=\"none\"/><Cell col=\"1\" text=\"bind:EMP_ID\" textAlign=\"center\" edittype=\"normal\"/><Cell col=\"2\" text=\"bind:EMP_NAME\" edittype=\"normal\"/><Cell col=\"3\" text=\"bind:EMP_NO\" displaytype=\"mask\" edittype=\"mask\" maskeditformat=\"######-#######\" maskedittype=\"string\"/><Cell col=\"4\" text=\"bind:EMAIL\" tooltiptext=\"bind:EMAIL\" edittype=\"normal\"/><Cell col=\"5\" text=\"bind:PHONE\" displaytype=\"mask\" edittype=\"mask\" maskeditformat=\"###-####-####\" maskedittype=\"string\" combodataset=\"ds_emp\" combodatacol=\"PHONE\"/><Cell col=\"6\" text=\"bind:DEPT_CODE\" displaytype=\"combotext\" edittype=\"combo\" combodataset=\"ds_dept\" combodatacol=\"DEPT_NAME\" combocodecol=\"DEPT_CD\"/><Cell col=\"7\" text=\"bind:SALARY\" displaytype=\"mask\" edittype=\"normal\" maskeditformat=\"#,###,###\" maskedittype=\"string\"/><Cell col=\"8\" text=\"bind:BONUS\" displaytype=\"number\" edittype=\"normal\"/><Cell col=\"9\" text=\"bind:MANAGER_ID\" displaytype=\"combotext\" combodataset=\"ds_emp\" combocodecol=\"EMP_ID\" combodatacol=\"EMP_NAME\"/><Cell col=\"10\" text=\"bind:HIRE_DATE\" displaytype=\"calendarcontrol\" edittype=\"date\"/><Cell col=\"11\" text=\"bind:ENT_DATE\" displaytype=\"calendarcontrol\" edittype=\"date\"/><Cell col=\"12\" text=\"bind:ENT_YN\" displaytype=\"checkboxcontrol\" edittype=\"checkbox\" checkboxtruevalue=\"Y\" checkboxfalsevalue=\"F\"/></Band><Band id=\"summary\"><Cell text=\"total\"/><Cell col=\"1\"/><Cell col=\"2\"/><Cell col=\"3\"/><Cell col=\"4\"/><Cell col=\"5\"/><Cell col=\"6\"/><Cell col=\"7\" text=\"expr:dataset.getSum(&quot;SALARY&quot;)\" textAlign=\"right\" displaytype=\"number\"/><Cell col=\"8\"/><Cell col=\"9\"/><Cell col=\"10\"/><Cell col=\"11\"/><Cell col=\"12\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
 
-            obj = new Button("btn_delrow","555","54","78","35",null,null,null,null,null,null,this);
+            obj = new Button("btn_delrow","1061","50","78","35",null,null,null,null,null,null,this);
             obj.set_taborder("3");
             obj.set_text("Del Row");
             this.addChild(obj.name, obj);
 
-            obj = new Button("btn_addrow","650","54","76","35",null,null,null,null,null,null,this);
+            obj = new Button("btn_addrow","1156","50","76","35",null,null,null,null,null,null,this);
             obj.set_taborder("4");
             obj.set_text("Add Row");
             this.addChild(obj.name, obj);
 
-            obj = new Button("btn_search","746","54","78","35",null,null,null,null,null,null,this);
+            obj = new Button("btn_search","1252","50","78","35",null,null,null,null,null,null,this);
             obj.set_taborder("5");
             obj.set_text("Search");
             this.addChild(obj.name, obj);
 
-            obj = new Button("btn_save","841","54","76","35",null,null,null,null,null,null,this);
+            obj = new Button("btn_save","1347","50","76","35",null,null,null,null,null,null,this);
             obj.set_taborder("6");
             obj.set_text("Save");
             this.addChild(obj.name, obj);
 
-            obj = new Grid("Grid01","11","445","280","88",null,null,null,null,null,null,this);
+            obj = new Grid("Grid01","3","320","167","80",null,null,null,null,null,null,this);
             obj.set_taborder("7");
             obj.set_binddataset("ds_search");
             obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row band=\"head\" size=\"24\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"NAME\"/><Cell col=\"1\" text=\"DEPT\"/></Band><Band id=\"body\"><Cell text=\"bind:NAME\"/><Cell col=\"1\" text=\"bind:DEPT\"/></Band></Format></Formats>");
@@ -100,7 +100,7 @@
 
             // Layout Functions
             //-- Default Layout : this
-            obj = new Layout("default","",1280,720,this,function(p){});
+            obj = new Layout("default","",1480,720,this,function(p){});
             this.addLayout(obj.name, obj);
             
             // BindItem Information
@@ -228,6 +228,11 @@
 
         	this.transaction(sSvcId,strUrl,sInDateSet,sOutDataSet,sArgument,"fn_CallBack");
         };
+        this.div_search_cbo_dept_onitemchanged = function(obj,e)
+        {
+
+        };
+
         });
         
         // Regist UI Components Event
@@ -238,6 +243,7 @@
             this.div_search.form.Static00.addEventHandler("onclick",this.div_search_Static00_onclick,this);
             this.div_search.form.Edit00.addEventHandler("onchanged",this.div_search_Edit00_onchanged,this);
             this.div_search.form.dpt_01.addEventHandler("onclick",this.div_search_Static00_onclick,this);
+            this.div_search.form.cbo_dept.addEventHandler("onitemchanged",this.div_search_cbo_dept_onitemchanged,this);
             this.btn_delrow.addEventHandler("onclick",this.btn_delrow_onclick,this);
             this.btn_addrow.addEventHandler("onclick",this.btn_addrow_onclick,this);
             this.btn_search.addEventHandler("onclick",this.btn_search_onclick,this);

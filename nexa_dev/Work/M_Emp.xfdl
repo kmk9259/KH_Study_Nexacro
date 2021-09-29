@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="M_Emp" width="1280" height="720" titletext="New Form" onload="M_Emp_onload">
+  <Form id="M_Emp" width="1480" height="720" titletext="New Form" onload="M_Emp_onload">
     <Layouts>
-      <Layout height="720" width="1280">
-        <Static id="sta_01" taborder="0" text="&gt;사원관리" left="15" top="21" width="162" height="43" onclick="Static00_onclick" font="16px/normal &quot;Gulim&quot;"/>
-        <Div id="div_search" taborder="1" left="8" top="100" width="917" height="81" background="antiquewhite">
+      <Layout height="720" width="1480">
+        <Static id="sta_01" taborder="0" text="&gt;사원관리" left="10" top="54" width="162" height="43" onclick="Static00_onclick" font="16px/normal &quot;Gulim&quot;"/>
+        <Div id="div_search" taborder="1" left="3" top="88" width="1422" height="42" background="antiquewhite">
           <Layouts>
             <Layout>
-              <Static id="Static00" taborder="0" text="*Name" left="14" top="21" width="43" height="43" onclick="div_search_Static00_onclick"/>
-              <Edit id="Edit00" taborder="1" left="70" top="21" width="154" height="43" onchanged="div_search_Edit00_onchanged"/>
-              <Static id="dpt_01" taborder="2" text="*Dept" left="240" top="23" width="82" height="43" onclick="div_search_Static00_onclick"/>
-              <Combo id="cbo_dept" taborder="3" text="Combo00" left="292" top="26" width="145" height="39" innerdataset="ds_dept" datacolumn="DEPT_NAME" codecolumn="DEPT_CD"/>
+              <Static id="Static00" taborder="0" text="*Name" left="7" top="3" width="43" height="29" onclick="div_search_Static00_onclick"/>
+              <Edit id="Edit00" taborder="1" left="57" top="7" width="154" height="21" onchanged="div_search_Edit00_onchanged"/>
+              <Static id="dpt_01" taborder="2" text="*Dept" left="231" top="3" width="55" height="23" onclick="div_search_Static00_onclick"/>
+              <Combo id="cbo_dept" taborder="3" text="Combo00" left="277" top="7" width="145" height="21" innerdataset="ds_dept" datacolumn="DEPT_NAME" codecolumn="DEPT_CD" onitemchanged="div_search_cbo_dept_onitemchanged"/>
             </Layout>
           </Layouts>
         </Div>
-        <Grid id="Grid00" taborder="2" left="8" top="190" width="1142" height="241" binddataset="ds_emp" cellsizingtype="col">
+        <Grid id="Grid00" taborder="2" left="3" top="130" width="1422" height="180" binddataset="ds_emp" cellsizingtype="col">
           <Formats>
             <Format id="default">
               <Columns>
@@ -85,11 +85,11 @@
             </Format>
           </Formats>
         </Grid>
-        <Button id="btn_delrow" taborder="3" text="Del Row" left="555" top="54" width="78" height="35" onclick="btn_delrow_onclick"/>
-        <Button id="btn_addrow" taborder="4" text="Add Row" left="650" top="54" width="76" height="35" onclick="btn_addrow_onclick"/>
-        <Button id="btn_search" taborder="5" text="Search" left="746" top="54" width="78" height="35" onclick="btn_search_onclick"/>
-        <Button id="btn_save" taborder="6" text="Save" left="841" top="54" width="76" height="35" onclick="btn_save_onclick"/>
-        <Grid id="Grid01" taborder="7" left="11" top="445" width="280" height="88" binddataset="ds_search">
+        <Button id="btn_delrow" taborder="3" text="Del Row" left="1061" top="50" width="78" height="35" onclick="btn_delrow_onclick"/>
+        <Button id="btn_addrow" taborder="4" text="Add Row" left="1156" top="50" width="76" height="35" onclick="btn_addrow_onclick"/>
+        <Button id="btn_search" taborder="5" text="Search" left="1252" top="50" width="78" height="35" onclick="btn_search_onclick"/>
+        <Button id="btn_save" taborder="6" text="Save" left="1347" top="50" width="76" height="35" onclick="btn_save_onclick"/>
+        <Grid id="Grid01" taborder="7" left="3" top="320" width="167" height="80" binddataset="ds_search">
           <Formats>
             <Format id="default">
               <Columns>
@@ -219,7 +219,12 @@ this.fn_save = function()
 	var sArgument ="";
 	
 	this.transaction(sSvcId,strUrl,sInDateSet,sOutDataSet,sArgument,"fn_CallBack");
-};]]></Script>
+};
+this.div_search_cbo_dept_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	
+};
+]]></Script>
     <Objects>
       <Dataset id="ds_emp">
         <ColumnInfo>

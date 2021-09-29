@@ -17,13 +17,13 @@ public class NexaDatasetCom {
 
 		DataSet ds = new DataSet(strDataSet);
 		if (list.size() > 0) {
-		//	System.out.println("list.size()" + list.size());
+			// System.out.println("list.size()" + list.size());
 
 			for (int i = 0; i < list.size(); i++) {
 				if (list.get(i) != null) {
 					System.out.println("list.get(i" + list.get(i));
 
-					Map newM = (Map)list.get(i);
+					Map newM = (Map) list.get(i);
 					if (i == 0) {
 						for (Iterator it = newM.keySet().iterator(); it.hasNext();) {
 
