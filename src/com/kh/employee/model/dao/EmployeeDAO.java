@@ -22,14 +22,14 @@ public class EmployeeDAO {
 		
 		String sql = "SELECT * FROM EMPLOYEE WHERE EMP_NAME LIKE '%'||Nvl(?,'')||'%' ";
 		if(!iMap.get("DEPT").toString().equals("ALL")) {
-			
+			//부서가 선택되었을 때
 			sql+= "AND DEPT_CODE LIKE '%'||Nvl(?,'')||'%' ORDER BY EMP_ID";
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, (String) iMap.get("NAME"));
 			pstmt.setString(2, (String) iMap.get("DEPT"));
 		}else {
-			
+			//부서가 아무것도 선택되지 않았을 때
 			sql+= "ORDER BY EMP_ID";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, (String) iMap.get("NAME"));

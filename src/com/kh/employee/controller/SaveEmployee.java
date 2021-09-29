@@ -56,8 +56,10 @@ public class SaveEmployee extends HttpServlet {
 		PlatformData in_data = req.getData();
 
 		// 데이터셋 받아오기
+		//save 버튼을 눌렀을 때 ds_emp dataset을 읽어드림
 		DataSet ds = in_data.getDataSet("ds_emp");
 		System.out.println(">>> ds : " + ds.getRowCount());
+		//현재 ds_emp에 있는 행의 개수를 출력 
 
 		EmployeeService employeeService = new EmployeeService();
 
@@ -66,6 +68,11 @@ public class SaveEmployee extends HttpServlet {
 			int result = 0;
 			for (int i = 0; i < ds.getRowCount(); i++) {
 				int rowType = ds.getRowType(i);
+				/*
+				 * rowType Dataset.ROWTYPE_NORMAL 0 초기 Row 상태 
+				 * Dataset.ROWTYPE_INSERT 1 추가된 Row 상태 
+				 * Dataset.ROWTYPE_UPDATE 2 수정된 Row 상태
+				 */
 				System.out.println(i + " 번째 rowType" + rowType);
 
 				if (rowType == DataSet.ROW_TYPE_INSERTED) {

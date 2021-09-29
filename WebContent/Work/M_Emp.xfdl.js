@@ -124,6 +124,7 @@
         this.executeIncludeScript("lib_com::l_com.xjs"); /*include "lib_com::l_com.xjs"*/;
         this.M_Emp_onload = function(obj,e)
         {
+        	//M_EMP가 onload 될 때 마다 DEPT 콤보박스의 INDEX[0]을 선택
         	this.div_search.form.cbo_dept.set_index(0);
         	this.fn_search();
         };
@@ -145,15 +146,23 @@
 
         this.fn_search = function()
         {
+        	//selectEmp 서블릿 매핑
         	var sSvcNm ="selectEmp";
-        	var sSvcId ="selectEmp";
-        	var strUrl = this.gfn_url() + sSvcNm;
+        	var sSvcId ="selectEmp";				//transaction을 구분하기 위한 ID
+        	var strUrl = this.gfn_url() + sSvcNm;	//transaction을 요청할 서버 페이지 주소
         	alert(strUrl);
-        	var sInDateSet ="ds_search=ds_search";
-        	var sOutDataSet ="ds_emp=ds_emp";
-        	var sArgument ="";
+        	var sInDataSet ="ds_search=ds_search";	//서버로 보낼 Dataset, "입력 ID = DatasetID"
+        											//입력 id : 서블릿에서 읽어드리는
+        											//:U - 갱신된 내용만 전송
+        											//:A - 모든 정보를 전송
+        											//:N - Delete를 제외한 데이터만 전송
 
-        	this.transaction(sSvcId,strUrl,sInDateSet,sOutDataSet,sArgument,"fn_CallBack");
+        	var sOutDataSet ="ds_emp=ds_emp";		//서버에서 보내는 데이터를 받을 Dataset
+        											//"Dataset ID=출력ID" 형식으로 문자열로 설정
+        	var sArgument ="";						//서버로 보낼 파라미터(변수)
+        											//"변수ID=변수값"
+
+        	this.transaction(sSvcId,strUrl,sInDataSet,sOutDataSet,sArgument,"fn_CallBack");
         };
 
         this.fn_CallBack = function(id, errorCode, errorMsg)
@@ -173,7 +182,7 @@
         		break;
         	case "saveEmp":
         		alert("저장되었습니다");
-        		this.fn_search();
+        		this.fn_search();					//저장후에 다시 재검색하도록
         		break;
 
         	default:
@@ -183,8 +192,8 @@
         };
         this.btn_save_onclick = function(obj,e)
         {
-        	if(this.fn_saveBef()){
-        		this.fn_save();
+        	if(this.fn_saveBef()){				//모든 컬럼을 다 입력했다면
+        		this.fn_save();					//저장하기
         	}
         };
 
